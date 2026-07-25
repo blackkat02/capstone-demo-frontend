@@ -4,7 +4,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-8 px-4 sm:px-6 md:grid-cols-4 md:px-8">
         <div className="col-span-2 md:col-span-1">
           <span className="font-['Space_Grotesk'] text-lg font-bold">
-            Ludi <span className="text-[#0EA89A]">.ua</span>
+            Зміна <span className="text-[#0EA89A]">.ua</span>
           </span>
           <p className="mt-3 max-w-xs text-sm text-[#6B7280]">
             Біржа змін для тих, кому потрібна робота чи персонал просто зараз.
