@@ -20,13 +20,13 @@ export function Header({
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[#E5E7EB] bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border bg-bg/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
         <a
           href="/"
-          className="font-['Space_Grotesk'] text-lg font-bold tracking-tight sm:text-xl"
+          className="font-heading text-lg font-bold tracking-tight sm:text-xl"
         >
-          Зміна <span className="text-[#0EA89A]">.ua</span>
+          Зміна<span className="text-accent">.ua</span>
         </a>
 
         <HeaderNav />
@@ -42,7 +42,7 @@ export function Header({
           type="button"
           onClick={() => setMenuOpen(true)}
           aria-label="Відкрити меню"
-          className="-mr-2 flex h-11 w-11 items-center justify-center text-[#12131A] md:hidden"
+          className="-mr-2 flex h-11 w-11 items-center justify-center text-ink md:hidden"
         >
           <Menu className="h-6 w-6" />
         </button>

@@ -7,7 +7,7 @@ export function HeaderNav() {
         <a
           key={link.href}
           href={link.href}
-          className="text-sm font-medium text-[#4B5563] transition-colors hover:text-[#0EA89A]"
+          className="text-sm font-medium text-text-muted transition-colors hover:text-accent"
         >
           {link.label}
         </a>

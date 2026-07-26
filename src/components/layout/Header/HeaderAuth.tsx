@@ -19,7 +19,7 @@ export function HeaderAuth({
         {isAuthenticated ? (
           <a
             href="/profile"
-            className="flex min-h-[44px] items-center justify-center rounded-full border border-[#E5E7EB] px-5 text-sm font-medium"
+            className="flex min-h-[44px] items-center justify-center rounded-full border border-border px-5 text-sm font-medium"
           >
             Профіль · {userBalance}₴
           </a>
@@ -28,14 +28,14 @@ export function HeaderAuth({
             <button
               type="button"
               onClick={onOpenSignIn}
-              className="min-h-[44px] rounded-full border border-[#E5E7EB] px-5 text-sm font-medium"
+              className="min-h-[44px] rounded-full border border-border px-5 text-sm font-medium"
             >
               Увійти
             </button>
             <button
               type="button"
               onClick={onOpenSignUp}
-              className="min-h-[44px] rounded-full bg-[#12131A] px-5 text-sm font-medium text-white"
+              className="min-h-[44px] rounded-full bg-ink px-5 text-sm font-medium text-white"
             >
               Реєстрація
             </button>
@@ -50,26 +50,26 @@ export function HeaderAuth({
       {isAuthenticated ? (
         <a
           href="/profile"
-          className="flex items-center gap-2 rounded-full border border-[#E5E7EB] py-1.5 pl-1.5 pr-4 text-sm font-medium hover:border-[#0EA89A]"
+          className="flex items-center gap-2 rounded-full border border-border py-1.5 pl-1.5 pr-4 text-sm font-medium hover:border-accent"
         >
-          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#12131A] text-xs text-white">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-ink text-xs text-white">
             ПБ
           </span>
-          <span className="font-['JetBrains_Mono']">{userBalance}₴</span>
+          <span className="font-mono">{userBalance}₴</span>
         </a>
       ) : (
         <>
           <button
             type="button"
             onClick={onOpenSignIn}
-            className="text-sm font-medium text-[#12131A] hover:text-[#0EA89A]"
+            className="text-sm font-medium text-ink hover:text-accent"
           >
             Увійти
           </button>
           <button
             type="button"
             onClick={onOpenSignUp}
-            className="rounded-full bg-[#12131A] px-5 py-2 text-sm font-medium text-white hover:bg-[#0EA89A]"
+            className="rounded-full bg-ink px-5 py-2 text-sm font-medium text-white hover:bg-accent"
           >
             Реєстрація
           </button>

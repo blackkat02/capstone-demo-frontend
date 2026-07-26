@@ -11,7 +11,7 @@ export function MobileNav({ onClose }: MobileNavProps) {
         <a
           key={link.href}
           href={link.href}
-          className="flex min-h-[44px] items-center text-base font-medium text-[#12131A]"
+          className="flex min-h-[44px] items-center text-base font-medium text-ink"
           onClick={onClose}
         >
           {link.label}
