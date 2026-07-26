@@ -2,27 +2,56 @@
 
 /* ==========================================================================
    LAYER 1 — PRIMITIVES
-   Сирі значення, витягнуті з поточного коду (Hero, Header, Footer, Ticker).
+   Сирі значення: базові кольори та альтернативні палітри/шрифти.
    ========================================================================== */
 @layer base {
   :root {
-    /* Fonts */
+    /* ----------------------------------------------------------------------
+       1. FONTS (Базові + Альтернативи)
+       ---------------------------------------------------------------------- */
+    /* Базовий сет */
     --font-space-grotesk: "Space Grotesk", sans-serif;
     --font-jetbrains-mono: "JetBrains Mono", monospace;
     --font-inter: "Inter", sans-serif;
 
-    /* Teal (brand accent) — трьом різним hover-відтінкам з коду треба
-       звестись до ОДНОГО. Обираю #0EA89A як базу і один узгоджений hover. */
+    /* Варіант Б: Більш гуманістичний та м'який стиль */
+    --font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
+
+    /* Варіант В: Строгий корпоративний / Fintech стиль */
+    --font-syne: "Syne", sans-serif;
+    --font-dm-sans: "DM Sans", sans-serif;
+
+
+    /* ----------------------------------------------------------------------
+       2. COLOR PALETTES (Примітиви)
+       ---------------------------------------------------------------------- */
+
+    /* A. TEAL (Поточний бренд-акцент) */
     --color-teal-500: #0ea89a;
     --color-teal-600: #0b8f83;
-    /* єдиний hover, замінює і #14C4B4, і #34314C */
     --color-teal-700: #0b7f75;
-    /* текст бейджа на teal/10 фоні */
 
-    /* Ink / neutral dark */
+    /* Б. INDIGO / ELECTRIC BLUE (Варіант: Fintech / SaaS) */
+    --color-indigo-500: #4f46e5;
+    --color-indigo-600: #4338ca;
+    --color-indigo-700: #3730a3;
+
+    /* В. EMERALD / FRESH GREEN (Варіант: Гроші, гнучкість, драйв) */
+    --color-emerald-500: #10b981;
+    --color-emerald-600: #059669;
+    --color-emerald-700: #047857;
+
+    /* Г. VIOLET / DEEP PURPLE (Варіант: Преміальний / Діджитал) */
+    --color-violet-500: #7c3aed;
+    --color-violet-600: #6d28d9;
+    --color-violet-700: #5b21b6;
+
+
+    /* ----------------------------------------------------------------------
+       3. NEUTRALS & GREYS
+       ---------------------------------------------------------------------- */
     --color-ink-900: #12131a;
 
-    /* Greys */
     --color-grey-50: #f4f5f7;
     --color-grey-100: #e5e7eb;
     --color-grey-300: #d1d5db;
@@ -31,35 +60,49 @@
     --color-grey-600: #4b5563;
     --color-grey-700: #4b4d5a;
 
-    /* Accent / highlight */
+    /* Status / Highlights */
     --color-gold-500: #f5a623;
+    --color-rose-500: #f43f5e;
+    --color-amber-500: #f59e0b;
 
-    /* Decorative (map illustration) */
+    /* Decorative (Map illustration) */
     --color-mint-100: #eef1f0;
-    --color-mint-300: #d9dec;
+    --color-mint-300: #d9e2ec;
 
-    --color-white-0: #fff;
+    --color-white-0: #ffffff;
   }
 }
 
 /* ==========================================================================
    LAYER 2 — SEMANTIC TOKENS
-   Те, що використовує розмітка. Генерує Tailwind-утиліти типу bg-accent,
-   text-ink, border-border тощо.
+   Те, що використовує розмітка та Tailwind-утиліти.
    ========================================================================== */
 @theme {
-  /* Typography */
+  /* ----------------------------------------------------------------------
+     Typography Mapping
+     ---------------------------------------------------------------------- */
+  /* Активний сет: Space Grotesk + Inter */
   --font-heading: var(--font-space-grotesk);
-  --font-mono: var(--font-jetbrains-mono);
   --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
 
-  /* Surfaces */
+  /* Альтернативні сети (закоментовано):
+  --font-heading: var(--font-plus-jakarta);
+  --font-body: var(--font-plus-jakarta);
+
+  --font-heading: var(--font-syne);
+  --font-body: var(--font-dm-sans);
+  */
+
+
+  /* ----------------------------------------------------------------------
+     Surfaces & Neutral Colors
+     ---------------------------------------------------------------------- */
   --color-bg: var(--color-white-0);
   --color-bg-muted: var(--color-grey-50);
   --color-bg-inverse: var(--color-ink-900);
   --color-border: var(--color-grey-100);
 
-  /* Text */
   --color-ink: var(--color-ink-900);
   --color-text: var(--color-grey-600);
   --color-text-muted: var(--color-grey-500);
@@ -67,15 +110,42 @@
   --color-text-on-dark: var(--color-grey-300);
   --color-divider-on-dark: var(--color-grey-700);
 
-  /* Brand / accent — ЄДИНЕ джерело правди для teal-кольору сайту */
-  --color-accent: var(--color-teal-500);
+
+  /* ----------------------------------------------------------------------
+     Brand Accent Tokens
+     ---------------------------------------------------------------------- */
+
+  /* Активний бренд: Teal / М'ята */
+  /* --color-accent: var(--color-teal-500);
   --color-accent-hover: var(--color-teal-600);
-  --color-accent-text: var(--color-teal-700);
+  --color-accent-text: var(--color-teal-700); */
 
-  /* Highlight (ставки/суми в тікері) */
+  /* Альтернативні палітри (закоментовано):
+
+  -- Indigo -- */
+  /* --color-accent: var(--color-indigo-500);
+  --color-accent-hover: var(--color-indigo-600);
+  --color-accent-text: var(--color-indigo-700); */
+
+  /* -- Emerald -- */
+  --color-accent: var(--color-emerald-500);
+  --color-accent-hover: var(--color-emerald-600);
+  --color-accent-text: var(--color-emerald-700);
+
+  /* -- Violet --
+  --color-accent: var(--color-violet-500);
+  --color-accent-hover: var(--color-violet-600);
+  --color-accent-text: var(--color-violet-700);
+  */
+
+
+  /* ----------------------------------------------------------------------
+     Functional & Decorative Tokens
+     ---------------------------------------------------------------------- */
   --color-highlight: var(--color-gold-500);
+  --color-danger: var(--color-rose-500);
+  --color-warning: var(--color-amber-500);
 
-  /* Decorative map illustration */
   --color-map-bg: var(--color-mint-100);
   --color-map-line: var(--color-mint-300);
 }
